@@ -4,7 +4,6 @@ import { updateCartCount } from "./lib";
 window.addEventListener('DOMContentLoaded', (event) => {
     initSecurePopover();
     initCartDrawer();
-    initCartBannerOverlay();
 });
 
 function initSecurePopover() {
@@ -184,37 +183,4 @@ function initCartDrawer() {
 
         }
     }
-}
-
-function initCartBannerOverlay() {
-
-    if(!document.querySelector('[data-no-overlay]')) {
-
-        let observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 1.0
-        }
-    
-        // let observer = new IntersectionObserver(handleCartBannerOverlay, observerOptions);
-    
-        const observer = new IntersectionObserver(entries => {
-            handleCartBannerOverlay(entries)
-        })
-    
-        observer.observe(document.querySelector('#main-header'))
-    
-        function handleCartBannerOverlay(entries) {
-            const overlayElement = document.getElementById('cart-banner-overlay');
-            entries.forEach(entry => {
-                if(entry.isIntersecting) {
-                    overlayElement.classList.add('hidden');
-                } else {
-                    overlayElement.classList.remove('hidden');
-                }
-            })
-        }
-        
-    }
-
 }

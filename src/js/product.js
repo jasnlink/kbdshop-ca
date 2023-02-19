@@ -4,72 +4,54 @@ import { initAddCartAction } from "./lib";
 window.addEventListener('DOMContentLoaded', (event) => {
     new Glide('.glide').mount();
     initAddCartAction();
-    initProductRecommended();
+    initProductTabAction();
+    initCherryTabAction();
 });
 
-function initProductRecommended() {
+function initProductTabAction() {
 
-    const productRecommendationsSection = document.querySelector('[data-recommended-content]');
-    const observer = new IntersectionObserver(handleIntersection, {rootMargin: '0px 0px 200px 0px'});
-
-    observer.observe(productRecommendationsSection);
-
-    function handleIntersection(entries, observer) {
-
-        if (!entries[0].isIntersecting) return;
-
-        observer.unobserve(productRecommendationsSection);
-
-        enableLoading()
-
-        const url = productRecommendationsSection.dataset.url;
-
-        fetch(url)
-        .then((res) => {
-            if(!res.ok) {
-                throw new Error();
-            }
-            return res.text()
+    let currentTab = 0
+    let productTabElementList = document.querySelectorAll('[data-product-tab-action]')
+    productTabElementList.forEach(element => {
+        element.addEventListener('click', event => {
+            let currentTabElement = document.querySelector('[data-product-tab="'+currentTab+'"]')
+            let currentTabActionElement = document.querySelector('[data-product-tab-action="'+currentTab+'"]')
+            currentTabElement.classList.add('hidden')
+            currentTabActionElement.classList.remove('font-bold')
+            let nextTab = parseInt(event.currentTarget.dataset.productTabAction)
+            let nextTabElement = document.querySelector('[data-product-tab="'+nextTab+'"]')
+            let nextTabActionElement = document.querySelector('[data-product-tab-action="'+nextTab+'"]')
+            nextTabElement.classList.remove('hidden')
+            nextTabActionElement.classList.add('font-bold')
+            currentTab = nextTab
         })
-        .then((data) => {
-            console.log(data)
-            productRecommendationsSection.innerHTML = data
-        })
-        .catch((error) => {
-            console.error(error)
-        })
-        .finally(() => {
-            disableLoading();
-            initAddCartAction();
-            new Glide('.glide-recommended', {
-                type: 'carousel',
-                startAt: 0,
-                perView: 4,
-                gap: 48,
-                breakpoints: {
-                    1536: {
-                        perView: 3
-                    },
-                    1024: {
-                        perView: 2
-                    },
-                    640: {
-                        perView: 1
-                    }
-                }
-            }).mount();
-        })
+    })
 
-        function enableLoading() {
-            document.querySelector('[data-recommended-state="default"]').classList.add('hidden');
-            document.querySelector('[data-recommended-state="loading"]').classList.remove('hidden');
-        }
+}
 
-        function disableLoading() {
-            document.querySelector('[data-recommended-state="default"]').classList.remove('hidden');
-            document.querySelector('[data-recommended-state="loading"]').classList.add('hidden');
-        }
+function initCherryTabAction() {
 
-    }
+    let currentTab = 0
+    let cherryTabElementList = document.querySelectorAll('[data-cherry-tab-action]')
+    cherryTabElementList.forEach(element => {
+        element.addEventListener('click', event => {
+            let currentTabElement = document.querySelector('[data-cherry-tab="'+currentTab+'"]')
+            let currentTabActionElement = document.querySelector('[data-cherry-tab-action="'+currentTab+'"]')
+            currentTabElement.classList.add('hidden')
+            currentTabActionElement.classList.remove('bg-white')
+            currentTabActionElement.classList.remove('text-black')
+            currentTabActionElement.classList.add('bg-black')
+            currentTabActionElement.classList.add('text-white')
+            let nextTab = parseInt(event.currentTarget.dataset.cherryTabAction)
+            let nextTabElement = document.querySelector('[data-cherry-tab="'+nextTab+'"]')
+            let nextTabActionElement = document.querySelector('[data-cherry-tab-action="'+nextTab+'"]')
+            nextTabElement.classList.remove('hidden')
+            nextTabActionElement.classList.remove('bg-black')
+            nextTabActionElement.classList.remove('text-white')
+            nextTabActionElement.classList.add('bg-white')
+            nextTabActionElement.classList.add('text-black')
+            currentTab = nextTab
+        })
+    })
 
 }
