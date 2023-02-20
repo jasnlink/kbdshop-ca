@@ -9,7 +9,7 @@
             <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:768px)" />
             <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:640px)" />
             <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:0px)" />
-            <img src="{{ image | asset_img_url: '1800x' }}" height="200" width="200" loading="lazy" class="w-full h-auto object-contain" />
+            <img src="{{ image | asset_img_url: '1800x' }}" height="200" width="200" loading="lazy" class="w-full h-auto object-contain rounded" />
         </picture>
     </div>
     <div class="mt-12">
@@ -29,12 +29,12 @@
                 <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:768px)" />
                 <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:640px)" />
                 <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:0px)" />
-                <img src="{{ image | asset_img_url: '1800x' }}" height="200" width="200" loading="lazy" class="w-full h-auto object-cover" />
+                <img src="{{ image | asset_img_url: '1800x' }}" height="200" width="200" loading="lazy" class="w-full h-auto object-cover rounded" />
             </picture>
         </div>
         <div class="col-span-5">
             <div class="pt-2 border-t border-gray-400">
-                <div class="text-xl font-bold">Ultimate typing experience</div>
+                <div class="text-xl font-bold">The ultimate typing experience</div>
                 <div class="mt-4">Engineered with CHERRY MX switches and full Nkey rollover support, each keystroke delivers exceptional precision and speed. The keyboard's sleek, matte black finish and FILCO original font design make it a stunning addition to any workspace.</div>
             </div>
             <div class="mt-12 pt-2 border-t border-gray-400">
@@ -43,7 +43,7 @@
             </div>
         </div>
     </div>
-    <div class="mt-24 text-center text-5xl font-bold">Pure typing pleasure with Cherry MX</div>
+    <div class="mt-36 text-center text-5xl font-bold">Pure typing pleasure with CHERRY MX</div>
     <div class="mt-12">
         <div class="w-6/12 mx-auto">
             {% assign image = 'product-showcase-3.gif' %}
@@ -53,9 +53,9 @@
             <div class="text-xs text-center italic">Image credit: cherrymx.de</div>
         </div>
         <div class="mt-12 pt-6 border-t border-gray-400">
-            <div class="grid grid-cols-12">
+            <div class="grid grid-cols-12 gap-8">
                 <div class="col-span-5">
-                    <div class="text-2xl font-bold ">Make every keystroke count.</div>
+                    <div class="text-2xl font-bold ">Make every keystroke count</div>
                 </div>
                 <div class="col-span-7">
                     <div>Introducing the ultimate typing experience with the Majestouch 3. Featuring the highly acclaimed CHERRY MX switches, each keystroke feels effortless and precise, providing an unrivaled tactile feedback that is second to none.</div>
@@ -63,9 +63,9 @@
             </div>
         </div>
         <div class="mt-24 pt-6 border-t border-gray-400">
-            <div class="grid grid-cols-12">
+            <div class="grid grid-cols-12 gap-8">
                 <div class="col-span-5">
-                    <div class="text-2xl font-bold ">Upgrade your typing game.</div>
+                    <div class="text-2xl font-bold ">Upgrade your typing game</div>
                 </div>
                 <div class="col-span-7">
                     <div>Whether you're a gamer or a typist, the CHERRY MX switches offer a smooth and tactile feel that will elevate your performance to the next level. Designed with precision and built to last, the Majestouch 3 with CHERRY MX switches is the ultimate keyboard for the discerning user who demands the very best.</div>
@@ -84,7 +84,7 @@
                     <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:768px)" />
                     <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:640px)" />
                     <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:0px)" />
-                    <img src="{{ image | asset_img_url: '1800x' }}" height="200" width="200" loading="lazy" class="w-full h-auto object-cover" />
+                    <img src="{{ image | asset_img_url: '1800x' }}" height="200" width="200" loading="lazy" class="w-full h-auto object-cover rounded" />
                 </picture>
                 <div role="button" data-cherry-tab-action="0" class="top-[11%] left-[22%] absolute select-none text-xs h-8 w-8 bg-white text-black border border-black hover:bg-white hover:text-black rounded-full p-2 flex items-center justify-center">
                     <span>1</span>
@@ -106,7 +106,7 @@
         </div>
         <div class="mt-12 pt-6 border-t border-gray-400">
             <div data-cherry-tab="0">
-                <div class="grid grid-cols-12">
+                <div class="grid grid-cols-12 gap-8">
                     <div class="col-span-5">
                         <div class="text-2xl font-bold ">1. Upper housing</div>
                     </div>
@@ -116,7 +116,7 @@
                 </div>
             </div>
             <div data-cherry-tab="1" class="hidden">
-                <div class="grid grid-cols-12">
+                <div class="grid grid-cols-12 gap-8">
                     <div class="col-span-5">
                         <div class="text-2xl font-bold ">2. Switch slider</div>
                     </div>
@@ -126,7 +126,7 @@
                 </div>
             </div>
             <div data-cherry-tab="2" class="hidden">
-                <div class="grid grid-cols-12">
+                <div class="grid grid-cols-12 gap-8">
                     <div class="col-span-5">
                         <div class="text-2xl font-bold ">3. Gold crosspoint contacts</div>
                     </div>
@@ -136,7 +136,7 @@
                 </div>
             </div>
             <div data-cherry-tab="3" class="hidden">
-                <div class="grid grid-cols-12">
+                <div class="grid grid-cols-12 gap-8">
                     <div class="col-span-5">
                         <div class="text-2xl font-bold ">4. Precision spiral spring</div>
                     </div>
@@ -146,7 +146,7 @@
                 </div>
             </div>
             <div data-cherry-tab="4" class="hidden">
-                <div class="grid grid-cols-12">
+                <div class="grid grid-cols-12 gap-8">
                     <div class="col-span-5">
                         <div class="text-2xl font-bold ">5. Precision-crafted CHERRY MX housing</div>
                     </div>
@@ -157,7 +157,7 @@
             </div>
         </div>
     </div>
-    <div class="mt-24 text-center text-5xl font-bold">Elegance meets function</div>
+    <div class="mt-36 text-center text-5xl font-bold">Elegance meets function</div>
     <div class="mt-12">
         <div>
             {% assign image = 'product-showcase-5.jpg' %}
@@ -168,11 +168,11 @@
                 <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:768px)" />
                 <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:640px)" />
                 <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:0px)" />
-                <img src="{{ image | asset_img_url: '1800x' }}" height="200" width="200" loading="lazy" class="w-full h-auto object-contain" />
+                <img src="{{ image | asset_img_url: '1800x' }}" height="200" width="200" loading="lazy" class="w-full h-auto object-contain rounded" />
             </picture>
         </div>
         <div class="mt-12 pt-6 border-t border-gray-400">
-            <div class="grid grid-cols-12">
+            <div class="grid grid-cols-12 gap-8">
                 <div class="col-span-5">
                     <div class="text-2xl font-bold ">The ultimate media companion</div>
                 </div>
@@ -192,11 +192,11 @@
                 <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:768px)" />
                 <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:640px)" />
                 <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:0px)" />
-                <img src="{{ image | asset_img_url: '1800x' }}" height="200" width="200" loading="lazy" class="w-full h-auto object-contain" />
+                <img src="{{ image | asset_img_url: '1800x' }}" height="200" width="200" loading="lazy" class="w-full h-auto object-contain rounded" />
             </picture>
         </div>
         <div class="mt-12 pt-6 border-t border-gray-400">
-            <div class="grid grid-cols-12">
+            <div class="grid grid-cols-12 gap-8">
                 <div class="col-span-5">
                     <div class="text-2xl font-bold ">Your perfect connection</div>
                 </div>
@@ -206,10 +206,30 @@
             </div>
         </div>
     </div>
-    <div class="mt-24 text-center text-5xl font-bold">Experience the difference in quality</div>
-    <div class="mt-12">
+    <div class="mt-36">
+        <div class="mt-4 text-center text-5xl font-bold">Unleash your gaming potential</div>
+        <div class="mt-12">
+            {% assign media = 'product-showcase-7.mp4' %}
+            <video width="250" autoplay loop muted playsinline class="w-full h-auto object-contain rounded">
+                <source src="{{ media | asset_url }}" type="video/mp4">
+            </video>
+        </div>
+        <div class="mt-12 pt-6 border-t border-gray-400">
+            <div class="grid grid-cols-12 gap-8">
+                <div class="col-span-5">
+                    <div class="text-2xl font-bold ">Full N-Key Rollover with 100% Anti-Ghosting</div>
+                </div>
+                <div class="col-span-7">
+                    <div>The FILCO Majestouch 3 is equipped with N-Key Rollover (NKRO) over USB. With this feature, you will flawlessly execute every move and command with FILCO's NKRO with 100% Anti-Ghosting technology. Each keystroke is accurately detected and recorded, allowing you to perform complex maneuvers with ease and confidence. Say goodbye to missed inputs and hello to a new level of precision and accuracy.</div>
+                    <div class="mt-4">This ensures that your typing experience is always accurate and responsive, making it perfect for fast typists, gamers, and professionals who require high-performance and reliability in their keyboards.</div>
+                    <div class="mt-4">The NKRO functionality with 100% Anti-Ghosting is another example of Filco's commitment to excellence and innovation in keyboard design.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-36">
         <div>
-            {% assign image = 'product-showcase-7.jpg' %}
+            {% assign image = 'product-showcase-8.png' %}
             <picture>
                 <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:1536px)" />
                 <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:1280px)" />
@@ -217,17 +237,225 @@
                 <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:768px)" />
                 <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:640px)" />
                 <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:0px)" />
-                <img src="{{ image | asset_img_url: '1800x' }}" height="200" width="200" loading="lazy" class="w-full h-auto object-contain" />
+                <img src="{{ image | asset_img_url: '1800x' }}" height="200" width="200" loading="lazy" class="w-full h-auto object-contain rounded" />
             </picture>
         </div>
-        <div class="mt-12 pt-6 border-t border-gray-400">
-            <div class="grid grid-cols-12">
+        <div class="mt-4 text-5xl font-bold">Feel the difference in quality</div>
+        <div class="mt-4 pt-6 border-t border-gray-400">
+            <div class="grid grid-cols-12 gap-8">
                 <div class="col-span-5">
                     <div class="text-2xl font-bold ">FILCO quality craftsmanship</div>
                 </div>
                 <div class="col-span-7">
-                    <div>The Filco brand has a reputation for exceptional craftsmanship since 1992, using only the highest quality materials and manufacturing processes. Each Majestouch 3 keyboard is built to last, with a solid construction that can withstand even the most demanding use. From the carefully selected components to the attention to detail in every aspect of the design, the Filco name represents the pinnacle of keyboard excellence.</div>
+                    <div>The Filco brand has a reputation for exceptional craftsmanship since 1992, using only the highest quality materials and manufacturing processes. Each Majestouch 3 keyboard is built to last, with a solid construction that can withstand even the most demanding use.</div>
+                    <div class="mt-4">From the carefully selected components to the attention to detail in every aspect of the design, the Filco name represents the pinnacle of keyboard excellence.</div>
                 </div>
+            </div>
+        </div>
+        <div class="mt-12 pt-6 border-t border-gray-400">
+            <div class="grid grid-cols-12 gap-8">
+                <div class="col-span-5">
+                    <div class="text-2xl font-bold ">Certified by CE, FCC, and RoHS</div>
+                </div>
+                <div class="col-span-7">
+                    <div>The FILCO Majestouch 3 is fully compliant with CE, FCC, and RoHS regulations. Rest easy knowing that you're using a product that meets the highest international standards for safety and environmental responsibility.</div>
+                    <div class="w-fit bg-gray-200 rounded px-4 py-2 mt-4 flex gap-4">
+                        <span>{% render 'icon-compliant-ce', class: 'h-16 w-16' %}</span>
+                        <span>{% render 'icon-compliant-fcc', class: 'h-16 w-16' %}</span>
+                        <span>{% render 'icon-compliant-rohs', class: 'h-16 w-16' %}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-12">
+        <div>
+            <iframe width="560" class="w-full h-auto rounded aspect-video" src="https://www.youtube-nocookie.com/embed/5MijJIX3DkA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="mt-12 pt-6 border-t border-gray-400">
+            <div class="grid grid-cols-12 gap-8">
+                <div class="col-span-5">
+                    <div class="text-2xl font-bold ">Experience the Majestouch 3 before you buy</div>
+                </div>
+                <div class="col-span-7">
+                    <div>Get a feel for the sleek design and high-quality craftsmanship of our keyboard before you buy. See how the keys respond to your touch. Discover why the FILCO Majestouch 3 is the ultimate choice for those who demand the best in performance and aesthetics.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-36 py-12 px-4 bg-gray-200 rounded">
+        <div class="text-center text-5xl font-bold">Which Majestouch 3 is right for you?</div>
+        <div class="mt-12">
+            {% assign image = 'product-showcase-9.png' %}
+            <picture>
+                <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:1536px)" />
+                <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:1280px)" />
+                <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:1024px)" />
+                <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:768px)" />
+                <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:640px)" />
+                <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:0px)" />
+                <img src="{{ image | asset_img_url: '1800x' }}" height="200" width="200" loading="lazy" class="w-full h-auto object-contain rounded" />
+            </picture>
+        </div>
+        <div class="mt-8">
+            <div class="grid grid-cols-4 gap-4">
+                <div>
+                    <div>
+                        {% assign image = 'product-showcase-blue.jpg' %}
+                        <picture>
+                            <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:1536px)" />
+                            <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:1280px)" />
+                            <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:1024px)" />
+                            <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:768px)" />
+                            <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:640px)" />
+                            <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:0px)" />
+                            <img src="{{ image | asset_img_url: '1800x' }}" height="200" width="200" loading="lazy" class="w-full h-auto object-contain rounded" />
+                        </picture>
+                    </div>
+                    <div class="mt-2">
+                        <div class="text-center text-lg font-bold">CHERRY MX Blue</div>
+                        <div class="mt-2 text-center">Listen to typing</div>
+                        {% assign media = 'product-showcase-audio-blue.wav' %}
+                        <figure class="mt-2 block w-full">
+                            <audio
+                                class="block w-full"
+                                controls
+                                src="{{ media | asset_url }}">
+                            </audio>
+                        </figure>
+                    </div>
+                    <div class="mt-4 pt-2 border-t border-gray-400">
+                        <div class="flex flex-col justify-center items-center gap-2">
+                            <span class="text-2xl font-bold">{{ product.selected_or_first_available_variant.price | money_with_currency }}</span>
+                            <span class="w-fit py-1 px-4 border border-green-700 font-medium text-center uppercase text-xs text-green-700 bg-green-200 rounded-sm">Shipping Included</span>
+                        </div>
+                        <button type="button" data-add-cart="{{ product.selected_or_first_available_variant.id }}" class="mt-4 w-full bg-black border text-sm border-black text-white text-center uppercase font-medium rounded-sm py-3 sm:px-8 select-none hover:bg-white hover:text-black disabled:opacity-75 disabled:bg-black disabled:text-white">
+                            <span data-add-state="success" class="hidden">{% render 'icon-success', class: 'mx-auto h-5 w-5 text-white', fill: 'none' %}</span>
+                            <span data-add-state="loading" class="hidden">{% render 'icon-loading', class: 'animate-spin mx-auto h-5 w-5 text-white' %}</span>
+                            <span data-add-state="default">Add to cart</span>
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        {% assign image = 'product-showcase-red.jpg' %}
+                        <picture>
+                            <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:1536px)" />
+                            <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:1280px)" />
+                            <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:1024px)" />
+                            <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:768px)" />
+                            <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:640px)" />
+                            <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:0px)" />
+                            <img src="{{ image | asset_img_url: '1800x' }}" height="200" width="200" loading="lazy" class="w-full h-auto object-contain rounded" />
+                        </picture>
+                    </div>
+                    <div class="mt-2">
+                        <div class="text-center text-lg font-bold">CHERRY MX Red</div>
+                        <div class="mt-2 text-center">Listen to typing</div>
+                        {% assign media = 'product-showcase-audio-red.wav' %}
+                        <figure class="mt-2 block w-full">
+                            <audio
+                                class="block w-full"
+                                controls
+                                src="{{ media | asset_url }}">
+                            </audio>
+                        </figure>
+                    </div>
+                    <div class="mt-4 pt-2 border-t border-gray-400">
+                        <div class="flex flex-col justify-center items-center gap-2">
+                            <span class="text-2xl font-bold">{{ product.selected_or_first_available_variant.price | money_with_currency }}</span>
+                            <span class="w-fit py-1 px-4 border border-green-700 font-medium text-center uppercase text-xs text-green-700 bg-green-200 rounded-sm">Shipping Included</span>
+                        </div>
+                        <button type="button" data-add-cart="{{ product.selected_or_first_available_variant.id }}" class="mt-4 w-full bg-black border text-sm border-black text-white text-center uppercase font-medium rounded-sm py-3 sm:px-8 select-none hover:bg-white hover:text-black disabled:opacity-75 disabled:bg-black disabled:text-white">
+                            <span data-add-state="success" class="hidden">{% render 'icon-success', class: 'mx-auto h-5 w-5 text-white', fill: 'none' %}</span>
+                            <span data-add-state="loading" class="hidden">{% render 'icon-loading', class: 'animate-spin mx-auto h-5 w-5 text-white' %}</span>
+                            <span data-add-state="default">Add to cart</span>
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        {% assign image = 'product-showcase-brown.jpg' %}
+                        <picture>
+                            <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:1536px)" />
+                            <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:1280px)" />
+                            <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:1024px)" />
+                            <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:768px)" />
+                            <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:640px)" />
+                            <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:0px)" />
+                            <img src="{{ image | asset_img_url: '1800x' }}" height="200" width="200" loading="lazy" class="w-full h-auto object-contain rounded" />
+                        </picture>
+                    </div>
+                    <div class="mt-2">
+                        <div class="text-center text-lg font-bold">CHERRY MX Brown</div>
+                        <div class="mt-2 text-center">Listen to typing</div>
+                        {% assign media = 'product-showcase-audio-brown.wav' %}
+                        <figure class="mt-2 block w-full">
+                            <audio
+                                class="block w-full"
+                                controls
+                                src="{{ media | asset_url }}">
+                            </audio>
+                        </figure>
+                    </div>
+                    <div class="mt-4 pt-2 border-t border-gray-400">
+                        <div class="flex flex-col justify-center items-center gap-2">
+                            <span class="text-2xl font-bold">{{ product.selected_or_first_available_variant.price | money_with_currency }}</span>
+                            <span class="w-fit py-1 px-4 border border-green-700 font-medium text-center uppercase text-xs text-green-700 bg-green-200 rounded-sm">Shipping Included</span>
+                        </div>
+                        <button type="button" data-add-cart="{{ product.selected_or_first_available_variant.id }}" class="mt-4 w-full bg-black border text-sm border-black text-white text-center uppercase font-medium rounded-sm py-3 sm:px-8 select-none hover:bg-white hover:text-black disabled:opacity-75 disabled:bg-black disabled:text-white">
+                            <span data-add-state="success" class="hidden">{% render 'icon-success', class: 'mx-auto h-5 w-5 text-white', fill: 'none' %}</span>
+                            <span data-add-state="loading" class="hidden">{% render 'icon-loading', class: 'animate-spin mx-auto h-5 w-5 text-white' %}</span>
+                            <span data-add-state="default">Add to cart</span>
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        {% assign image = 'product-showcase-silentred.jpg' %}
+                        <picture>
+                            <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:1536px)" />
+                            <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:1280px)" />
+                            <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:1024px)" />
+                            <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:768px)" />
+                            <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:640px)" />
+                            <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:0px)" />
+                            <img src="{{ image | asset_img_url: '1800x' }}" height="200" width="200" loading="lazy" class="w-full h-auto object-contain rounded" />
+                        </picture>
+                    </div>
+                    <div class="mt-2">
+                        <div class="text-center text-lg font-bold">CHERRY MX Silent Red</div>
+                        <div class="mt-2 text-center">Listen to typing</div>
+                        {% assign media = 'product-showcase-audio-silentred.wav' %}
+                        <figure class="mt-2 block w-full">
+                            <audio
+                                class="block w-full"
+                                controls
+                                src="{{ media | asset_url }}">
+                            </audio>
+                        </figure>
+                    </div>
+                    <div class="mt-4 pt-2 border-t border-gray-400">
+                        <div class="flex flex-col justify-center items-center gap-2">
+                            <span class="text-2xl font-bold">{{ product.selected_or_first_available_variant.price | money_with_currency }}</span>
+                            <span class="w-fit py-1 px-4 border border-green-700 font-medium text-center uppercase text-xs text-green-700 bg-green-200 rounded-sm">Shipping Included</span>
+                        </div>
+                        <button type="button" data-add-cart="{{ product.selected_or_first_available_variant.id }}" class="mt-4 w-full bg-black border text-sm border-black text-white text-center uppercase font-medium rounded-sm py-3 sm:px-8 select-none hover:bg-white hover:text-black disabled:opacity-75 disabled:bg-black disabled:text-white">
+                            <span data-add-state="success" class="hidden">{% render 'icon-success', class: 'mx-auto h-5 w-5 text-white', fill: 'none' %}</span>
+                            <span data-add-state="loading" class="hidden">{% render 'icon-loading', class: 'animate-spin mx-auto h-5 w-5 text-white' %}</span>
+                            <span data-add-state="default">Add to cart</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-8 mx-auto">
+            <div class="container mx-auto py-4 border-t border-gray-400 rounded-sm">
+                <ul class="ml-4 mt-4 list-disc leading-8">
+                    {% for product_highlight in product.metafields.custom.highlights.value %}
+                        <li class="mt-2">{{ product_highlight }}</li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
     </div>

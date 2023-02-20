@@ -643,8 +643,28 @@ html {
   left: -0.25rem;
 }
 
+.left-\[14\%\] {
+  left: 14%;
+}
+
+.left-\[22\%\] {
+  left: 22%;
+}
+
+.left-\[26\%\] {
+  left: 26%;
+}
+
 .right-4 {
   right: 1rem;
+}
+
+.right-\[29\%\] {
+  right: 29%;
+}
+
+.right-\[37\%\] {
+  right: 37%;
 }
 
 .top-0 {
@@ -655,128 +675,20 @@ html {
   top: 1rem;
 }
 
-.left-1\/4 {
-  left: 25%;
-}
-
-.top-1\/4 {
-  top: 25%;
-}
-
-.top-\[20\%\] {
-  top: 20%;
-}
-
-.top-\[15\%\] {
-  top: 15%;
-}
-
-.left-\[23\%\] {
-  left: 23%;
-}
-
-.top-\[13\%\] {
-  top: 13%;
-}
-
-.left-\[22\%\] {
-  left: 22%;
-}
-
 .top-\[11\%\] {
   top: 11%;
-}
-
-.right-\[22\%\] {
-  right: 22%;
-}
-
-.top-\[50\%\] {
-  top: 50%;
 }
 
 .top-\[30\%\] {
   top: 30%;
 }
 
-.right-\[26\%\] {
-  right: 26%;
-}
-
-.top-\[29\%\] {
-  top: 29%;
-}
-
-.right-\[28\%\] {
-  right: 28%;
-}
-
-.right-\[29\%\] {
-  right: 29%;
-}
-
-.top-\[60\%\] {
-  top: 60%;
-}
-
-.left-\[26\%\] {
-  left: 26%;
-}
-
-.top-\[52\%\] {
-  top: 52%;
-}
-
-.top-\[48\%\] {
-  top: 48%;
-}
-
 .top-\[46\%\] {
   top: 46%;
 }
 
-.right-\[36\%\] {
-  right: 36%;
-}
-
-.top-\[76\%\] {
-  top: 76%;
-}
-
-.top-\[62\%\] {
-  top: 62%;
-}
-
-.top-\[59\%\] {
-  top: 59%;
-}
-
-.right-\[37\%\] {
-  right: 37%;
-}
-
-.left-\[16\%\] {
-  left: 16%;
-}
-
-.top-\[86\%\] {
-  top: 86%;
-}
-
-.top-\[74\%\] {
-  top: 74%;
-}
-
-.left-\[15\%\] {
-  left: 15%;
-}
-
-.left-\[14\%\] {
-  left: 14%;
-}
-
-.top-\[78\%\] {
-  top: 78%;
+.top-\[60\%\] {
+  top: 60%;
 }
 
 .top-\[77\%\] {
@@ -886,6 +798,10 @@ html {
 
 .mt-24 {
   margin-top: 6rem;
+}
+
+.mt-36 {
+  margin-top: 9rem;
 }
 
 .mt-4 {
@@ -1012,6 +928,10 @@ html {
   aspect-ratio: 1 / 1;
 }
 
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
 .h-1 {
   height: 0.25rem;
 }
@@ -1042,6 +962,10 @@ html {
 
 .h-full {
   height: 100%;
+}
+
+.h-16 {
+  height: 4rem;
 }
 
 .w-1 {
@@ -1087,6 +1011,10 @@ html {
 
 .w-full {
   width: 100%;
+}
+
+.w-16 {
+  width: 4rem;
 }
 
 .max-w-screen-lg {
@@ -1449,6 +1377,10 @@ html {
 
 .grid-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .grid-cols-6 {
@@ -2303,6 +2235,11 @@ html {
   padding-bottom: 1.5rem;
 }
 
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
 .pb-12 {
   padding-bottom: 3rem;
 }
@@ -2422,6 +2359,11 @@ html {
   line-height: 2.5rem;
 }
 
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
 .text-6xl {
   font-size: 3.75rem;
   line-height: 1;
@@ -2450,11 +2392,6 @@ html {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
 }
 
 .font-bold {
