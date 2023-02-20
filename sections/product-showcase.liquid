@@ -1,5 +1,5 @@
 <div class="mt-40 max-w-screen-lg mx-auto">
-    <div class="text-center text-7xl font-bold">Discover the Majestouch 3</div>
+    <div class="text-center text-5xl sm:text-7xl font-bold leading-snug">Discover the Majestouch 3</div>
     <div class="mt-12">
         {% assign image = 'product-showcase-1.png' %}
         <picture>
@@ -14,25 +14,25 @@
     </div>
     <div class="mt-12">
         <div class="pb-4 border-b border-gray-400">
-            <div class="text-2xl font-bold ">Precision, durability, and style in one sleek package</div>
+            <div class="text-xl sm:text-2xl font-bold ">Precision, durability, and style in one sleek package</div>
         </div>
-        <div class="mt-8 text-6xl font-bold">Elevate your typing experience.</div>
+        <div class="mt-4 sm:mt-8 text-4xl sm:text-6xl font-bold">Elevate your typing experience</div>
         <div class="mt-8 text-lg w-11/12">Introducing the Majestouch 3 Tenkeyless keyboard - the ultimate typing experience, now with all-new features that enhance your productivity and elevate your desktop aesthetics. With Cherry MX Switches, a minimalist design, and a durable build, the Majestouch 3 is built to last and elevate your typing experience.</div>
     </div>
     <div class="mt-24 grid grid-cols-12 gap-8">
-        <div class="col-span-7">
+        <div class="col-span-12 sm:col-span-7 flex item-center">
             {% assign image = 'product-showcase-2.jpg' %}
-            <picture>
+            <picture class="flex item-center">
                 <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:1536px)" />
                 <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:1280px)" />
                 <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:1024px)" />
                 <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:768px)" />
                 <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:640px)" />
                 <source srcset="{{ image | asset_img_url: '1800x' }}" media="(min-width:0px)" />
-                <img src="{{ image | asset_img_url: '1800x' }}" height="200" width="200" loading="lazy" class="w-full h-auto object-cover rounded" />
+                <img src="{{ image | asset_img_url: '1800x' }}" height="200" width="200" loading="lazy" class="w-full h-auto object-contain rounded" />
             </picture>
         </div>
-        <div class="col-span-5">
+        <div class="col-span-12 sm:col-span-5">
             <div class="pt-2 border-t border-gray-400">
                 <div class="text-xl font-bold">The ultimate typing experience</div>
                 <div class="mt-4">Engineered with CHERRY MX switches and full Nkey rollover support, each keystroke delivers exceptional precision and speed. The keyboard's sleek, matte black finish and FILCO original font design make it a stunning addition to any workspace.</div>
@@ -43,9 +43,9 @@
             </div>
         </div>
     </div>
-    <div class="mt-36 text-center text-5xl font-bold">Pure typing pleasure with CHERRY MX</div>
+    <div class="mt-36 text-center text-4xl sm:text-5xl leading-snug font-bold">Pure typing pleasure with CHERRY MX</div>
     <div class="mt-12">
-        <div class="w-6/12 mx-auto">
+        <div class="w-full sm:w-6/12 mx-auto">
             {% assign image = 'product-showcase-3.gif' %}
             <picture>
                 <img src="{{ image | asset_img_url: 'original' }}" height="200" width="200" loading="lazy" class="w-full h-auto object-cover" />
@@ -54,27 +54,27 @@
         </div>
         <div class="mt-12 pt-6 border-t border-gray-400">
             <div class="grid grid-cols-12 gap-8">
-                <div class="col-span-5">
+                <div class="col-span-12 sm:col-span-5">
                     <div class="text-2xl font-bold ">Make every keystroke count</div>
                 </div>
-                <div class="col-span-7">
+                <div class="col-span-12 sm:col-span-7">
                     <div>Introducing the ultimate typing experience with the Majestouch 3. Featuring the highly acclaimed CHERRY MX switches, each keystroke feels effortless and precise, providing an unrivaled tactile feedback that is second to none.</div>
                 </div>
             </div>
         </div>
         <div class="mt-24 pt-6 border-t border-gray-400">
             <div class="grid grid-cols-12 gap-8">
-                <div class="col-span-5">
+                <div class="col-span-12 sm:col-span-5">
                     <div class="text-2xl font-bold ">Upgrade your typing game</div>
                 </div>
-                <div class="col-span-7">
+                <div class="col-span-12 sm:col-span-7">
                     <div>Whether you're a gamer or a typist, the CHERRY MX switches offer a smooth and tactile feel that will elevate your performance to the next level. Designed with precision and built to last, the Majestouch 3 with CHERRY MX switches is the ultimate keyboard for the discerning user who demands the very best.</div>
                 </div>
             </div>
         </div>
     </div>
     <div class="mt-24">
-        <div class="w-4/12 mx-auto">
+        <div class="w-7/12 sm:w-4/12 mx-auto">
             <div class="relative">
                 {% assign image = 'product-showcase-4.png' %}
                 <picture>
@@ -107,57 +107,57 @@
         <div class="mt-12 pt-6 border-t border-gray-400">
             <div data-cherry-tab="0">
                 <div class="grid grid-cols-12 gap-8">
-                    <div class="col-span-5">
+                    <div class="col-span-12 sm:col-span-5">
                         <div class="text-2xl font-bold ">1. Upper housing</div>
                     </div>
-                    <div class="col-span-7">
+                    <div class="col-span-12 sm:col-span-7">
                         <div>Crafted with high-precision CAD technology, the upper housing is made of durable plastic polymer, ensuring accuracy of less than 0.01 millimeters. It guides the switch slider with precision while also holding the CHERRY-MX module's switching mechanism.</div>
                     </div>
                 </div>
             </div>
             <div data-cherry-tab="1" class="hidden">
                 <div class="grid grid-cols-12 gap-8">
-                    <div class="col-span-5">
+                    <div class="col-span-12 sm:col-span-5">
                         <div class="text-2xl font-bold ">2. Switch slider</div>
                     </div>
-                    <div class="col-span-7">
+                    <div class="col-span-12 sm:col-span-7">
                         <div>Another high-precision CAD component made from version-specific polymer that, when combined with the housing upper part and the spring, creates resistance and tactile feedback, and onto which the keycap is mounted.</div>
                     </div>
                 </div>
             </div>
             <div data-cherry-tab="2" class="hidden">
                 <div class="grid grid-cols-12 gap-8">
-                    <div class="col-span-5">
+                    <div class="col-span-12 sm:col-span-5">
                         <div class="text-2xl font-bold ">3. Gold crosspoint contacts</div>
                     </div>
-                    <div class="col-span-7">
+                    <div class="col-span-12 sm:col-span-7">
                         <div>The beating heart of every CHERRY MX module and the patented foundation of its incredible reliability and durability: Special triangle-shaped contacts meet each other in a precise cross and right angle. This world-renowned CHERRY innovation, along with the elaborate gold plating, makes the electrical contact self-cleaning and permanently corrosion-resistant, ensuring over 100 million guaranteed actuations.</div>
                     </div>
                 </div>
             </div>
             <div data-cherry-tab="3" class="hidden">
                 <div class="grid grid-cols-12 gap-8">
-                    <div class="col-span-5">
+                    <div class="col-span-12 sm:col-span-5">
                         <div class="text-2xl font-bold ">4. Precision spiral spring</div>
                     </div>
-                    <div class="col-span-7">
+                    <div class="col-span-12 sm:col-span-7">
                         <div>The resistance of the CHERRY MX module is generated by a precision spiral spring. Made of a high-density metal alloy with a specific molecular structure, it is individually calculated for each module to provide consistent and optimized resistance. As a result, the pressure required to activate the switch is always the same, ensuring a reliable and precise typing experience.</div>
                     </div>
                 </div>
             </div>
             <div data-cherry-tab="4" class="hidden">
                 <div class="grid grid-cols-12 gap-8">
-                    <div class="col-span-5">
+                    <div class="col-span-12 sm:col-span-5">
                         <div class="text-2xl font-bold ">5. Precision-crafted CHERRY MX housing</div>
                     </div>
-                    <div class="col-span-7">
+                    <div class="col-span-12 sm:col-span-7">
                         <div>Crafted with high-precision CAD technology, the housing of the CHERRY MX keyboard is a double-functional component made of a special polymer. At its core, it provides a secure and precise fit for the switch mechanism, ensuring unparalleled performance and durability. On the outside, it serves as a sturdy base for the mechanical keyboard's motherboard, delivering a stable foundation for peak performance.</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="mt-36 text-center text-5xl font-bold">Elegance meets function</div>
+    <div class="mt-36 text-center text-4xl sm:text-5xl font-bold leading-snug">Elegance meets function</div>
     <div class="mt-12">
         <div>
             {% assign image = 'product-showcase-5.jpg' %}
@@ -173,10 +173,10 @@
         </div>
         <div class="mt-12 pt-6 border-t border-gray-400">
             <div class="grid grid-cols-12 gap-8">
-                <div class="col-span-5">
+                <div class="col-span-12 sm:col-span-5">
                     <div class="text-2xl font-bold ">The ultimate media companion</div>
                 </div>
-                <div class="col-span-7">
+                <div class="col-span-12 sm:col-span-7">
                     <div>Say goodbye to clunky media controls and hello to the sleek and intuitive media functions of Majestouch 3. With dedicated keys for play, pause, skip, and volume control, you can enjoy your media with ease and style.</div>
                 </div>
             </div>
@@ -197,17 +197,17 @@
         </div>
         <div class="mt-12 pt-6 border-t border-gray-400">
             <div class="grid grid-cols-12 gap-8">
-                <div class="col-span-5">
+                <div class="col-span-12 sm:col-span-5">
                     <div class="text-2xl font-bold ">Your perfect connection</div>
                 </div>
-                <div class="col-span-7">
+                <div class="col-span-12 sm:col-span-7">
                     <div>The high-quality USB/PS2 cable of the Majestouch 3 guarantees a reliable connection between your keyboard and computer. With its durable construction and stable transmission, it ensures a seamless typing experience every time you use it.</div>
                 </div>
             </div>
         </div>
     </div>
     <div class="mt-36">
-        <div class="mt-4 text-center text-5xl font-bold">Unleash your gaming potential</div>
+        <div class="mt-4 text-center text-4xl sm:text-5xl font-bold leading-snug">Unleash your gaming potential</div>
         <div class="mt-12">
             {% assign media = 'product-showcase-7.mp4' %}
             <video width="250" autoplay loop muted playsinline class="w-full h-auto object-contain rounded">
@@ -216,10 +216,10 @@
         </div>
         <div class="mt-12 pt-6 border-t border-gray-400">
             <div class="grid grid-cols-12 gap-8">
-                <div class="col-span-5">
+                <div class="col-span-12 sm:col-span-5">
                     <div class="text-2xl font-bold ">Full N-Key Rollover with 100% Anti-Ghosting</div>
                 </div>
-                <div class="col-span-7">
+                <div class="col-span-12 sm:col-span-7">
                     <div>The FILCO Majestouch 3 is equipped with N-Key Rollover (NKRO) over USB. With this feature, you will flawlessly execute every move and command with FILCO's NKRO with 100% Anti-Ghosting technology. Each keystroke is accurately detected and recorded, allowing you to perform complex maneuvers with ease and confidence. Say goodbye to missed inputs and hello to a new level of precision and accuracy.</div>
                     <div class="mt-4">This ensures that your typing experience is always accurate and responsive, making it perfect for fast typists, gamers, and professionals who require high-performance and reliability in their keyboards.</div>
                     <div class="mt-4">The NKRO functionality with 100% Anti-Ghosting is another example of Filco's commitment to excellence and innovation in keyboard design.</div>
@@ -240,13 +240,13 @@
                 <img src="{{ image | asset_img_url: '1800x' }}" height="200" width="200" loading="lazy" class="w-full h-auto object-contain rounded" />
             </picture>
         </div>
-        <div class="mt-4 text-5xl font-bold">Feel the difference in quality</div>
+        <div class="mt-4 text-4xl sm:text-5xl leading-snug font-bold">Feel the difference in quality</div>
         <div class="mt-4 pt-6 border-t border-gray-400">
             <div class="grid grid-cols-12 gap-8">
-                <div class="col-span-5">
+                <div class="col-span-12 sm:col-span-5">
                     <div class="text-2xl font-bold ">FILCO quality craftsmanship</div>
                 </div>
-                <div class="col-span-7">
+                <div class="col-span-12 sm:col-span-7">
                     <div>The Filco brand has a reputation for exceptional craftsmanship since 1992, using only the highest quality materials and manufacturing processes. Each Majestouch 3 keyboard is built to last, with a solid construction that can withstand even the most demanding use.</div>
                     <div class="mt-4">From the carefully selected components to the attention to detail in every aspect of the design, the Filco name represents the pinnacle of keyboard excellence.</div>
                 </div>
@@ -254,10 +254,10 @@
         </div>
         <div class="mt-12 pt-6 border-t border-gray-400">
             <div class="grid grid-cols-12 gap-8">
-                <div class="col-span-5">
+                <div class="col-span-12 sm:col-span-5">
                     <div class="text-2xl font-bold ">Certified by CE, FCC, and RoHS</div>
                 </div>
-                <div class="col-span-7">
+                <div class="col-span-12 sm:col-span-7">
                     <div>The FILCO Majestouch 3 is fully compliant with CE, FCC, and RoHS regulations. Rest easy knowing that you're using a product that meets the highest international standards for safety and environmental responsibility.</div>
                     <div class="w-fit bg-gray-200 rounded px-4 py-2 mt-4 flex gap-4">
                         <span>{% render 'icon-compliant-ce', class: 'h-16 w-16' %}</span>
@@ -274,17 +274,17 @@
         </div>
         <div class="mt-12 pt-6 border-t border-gray-400">
             <div class="grid grid-cols-12 gap-8">
-                <div class="col-span-5">
+                <div class="col-span-12 sm:col-span-5">
                     <div class="text-2xl font-bold ">Experience the Majestouch 3 before you buy</div>
                 </div>
-                <div class="col-span-7">
+                <div class="col-span-12 sm:col-span-7">
                     <div>Get a feel for the sleek design and high-quality craftsmanship of our keyboard before you buy. See how the keys respond to your touch. Discover why the FILCO Majestouch 3 is the ultimate choice for those who demand the best in performance and aesthetics.</div>
                 </div>
             </div>
         </div>
     </div>
     <div class="mt-36 py-12 px-4 bg-gray-200 rounded">
-        <div class="text-center text-5xl font-bold">Which Majestouch 3 is right for you?</div>
+        <div class="text-center text-4xl sm:text-5xl leading-snug font-bold">Which Majestouch 3 is right for you?</div>
         <div class="mt-12">
             {% assign image = 'product-showcase-9.png' %}
             <picture>
@@ -298,7 +298,7 @@
             </picture>
         </div>
         <div class="mt-8">
-            <div class="grid grid-cols-4 gap-4">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-4">
                 <div>
                     <div>
                         {% assign image = 'product-showcase-blue.jpg' %}
