@@ -6,7 +6,117 @@ window.addEventListener('DOMContentLoaded', (event) => {
     initAddCartAction();
     initProductTabAction();
     initCherryTabAction();
+    initVariantSelector();
+    initPurchaseOverlay();
 });
+
+function initPurchaseOverlay() {
+    let options = {
+        rootMargin: '0px',
+        threshold: 1.0
+    }
+    
+    let observeElement = document.querySelector('[data-overlay-listen]')
+    let observer = new IntersectionObserver(handleIntersect, options);
+    observer.observe(observeElement);
+
+    function handleIntersect(entries) {
+        entries.forEach((entry) => {
+            // isIntersecting means we see the target element (add to cart button)
+            if (entry.isIntersecting) {
+                document.querySelector('[data-overlay-action]').classList.add('hidden')
+                document.querySelector('footer').classList.remove('mb-24')
+            } else {
+                document.querySelector('[data-overlay-action]').classList.remove('hidden')
+                document.querySelector('footer').classList.add('mb-24')
+            }
+        });
+    }
+}
+
+function initVariantSelector() {
+
+    let selectionState = {}
+    document.querySelectorAll('[data-selector-option-group-index]').forEach(element => {
+        let targetOptionIndex = parseInt(element.dataset.selectorOptionGroupIndex)
+        selectionState[targetOptionIndex] = {
+            value: null
+        }
+    })
+    
+    document.querySelectorAll('[data-selector-element-type]').forEach(selectorElement => {
+        let selectorType = selectorElement.dataset.selectorElementType
+        if(selectorType === 'button') {
+            document.querySelectorAll('[data-selector-element-type="button"] [data-selector-default]').forEach(element => handleSelection(element))
+            let selectorActionElementList = document.querySelectorAll('[data-selector-action]');
+            selectorActionElementList.forEach(element => {
+                element.addEventListener('click', event => {
+                    event.preventDefault();
+                    handleSelection(event.currentTarget);
+                })
+            })
+        } else if(selectorType === 'dropdown') {
+            selectorElement.addEventListener('change', event => {
+                event.preventDefault();
+                let selectedOption = event.target.options[event.target.options.selectedIndex]
+                handleSelection(selectedOption);
+            })
+        }
+    })
+
+    function handleSelection(element) {
+        let targetOptionIndex = parseInt(element.dataset.selectorAction)
+
+        console.log('targetOptionIndex', targetOptionIndex)
+
+        if(selectionState[targetOptionIndex]['value']) {
+            document.querySelectorAll('[data-selector-option-group-index="'+targetOptionIndex+'"] [data-selector-option-value="'+selectionState[targetOptionIndex]['value']+'"]')
+            .forEach((optionElement) => {
+                console.log('optionElement', optionElement)
+                optionElement.classList.remove('bg-black')
+                optionElement.classList.remove('text-white')
+                optionElement.classList.add('bg-white')
+                optionElement.classList.add('text-black')
+            })
+        }
+        selectionState[targetOptionIndex]['value'] = element.dataset.selectorOptionValue
+        document.querySelectorAll('[data-selector-option-group-index="'+targetOptionIndex+'"] [data-selector-option-value="'+selectionState[targetOptionIndex]['value']+'"]')
+        .forEach((optionElement) => {
+            let optionGroupElement = optionElement.closest('[data-selector-element-type]')
+            if(optionGroupElement.dataset.selectorElementType === 'dropdown') {
+                optionGroupElement.selectedIndex = parseInt(optionElement.dataset.selectorOptionIndex)
+            }
+            optionElement.classList.remove('bg-white')
+            optionElement.classList.remove('text-black')
+            optionElement.classList.add('bg-black')
+            optionElement.classList.add('text-white')
+        })
+        searchVariantList()
+    }
+
+    function searchVariantList() {
+        let search = ''
+        Object.keys(selectionState).forEach((key) => {
+            search += '[data-selector-variant-option-'+key+'="'+selectionState[key]['value']+'"]'
+        })
+        let foundElement = document.querySelector(search)
+        if(foundElement) {
+            document.querySelectorAll('[data-add-cart]').forEach(element => {
+                element.dataset.addCart = foundElement.dataset.selectorVariantId
+                element.disabled = false
+            })
+            document.querySelectorAll('[data-product-display-price]').forEach(element => {
+                element.dataset.productDisplayPrice = foundElement.dataset.selectorVariantPrice
+            })
+        } else {
+            document.querySelectorAll('[data-add-cart]').forEach(element => {
+                element.dataset.addCart = null
+                element.disabled = true
+            })
+        }
+    }
+
+}
 
 function initProductTabAction() {
 

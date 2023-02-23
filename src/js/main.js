@@ -65,7 +65,9 @@ function initCartDrawer() {
 
     updateCartCount();
 
-    function handleCartToggle() {
+    function handleCartToggle(event) {
+
+        event.preventDefault();
 
         if(drawerOpen === false) {
             cartWrapperElement.classList.remove('hidden');

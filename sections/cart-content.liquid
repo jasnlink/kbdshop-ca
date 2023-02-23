@@ -1,0 +1,72 @@
+{% if cart.empty? == true %}
+    <div id="cart-drawer-content" class="shrink">
+        <div class="container mt-12 mx-auto">
+            <div class="text-center text-xl font-medium">Your cart is currently empty.</div>
+            <div class="text-center mt-2">Let us help you find some amazing products to fill it up.</div>
+            <div role="button" id="cart-shop-btn" class="w-fit mx-auto mt-4 bg-black border border-black text-sm text-white font-medium uppercase px-8 py-3 rounded-sm text-center hover:bg-white hover:text-black">Shop now</div>
+        </div>
+    </div>
+{% else %}
+    <div id="cart-drawer-items" class="shrink overflow-auto">
+        <div class="container mt-4 mb-5 mx-auto flex flex-col gap-y-2">
+            {% for line_item in cart.items %}
+                <div class="flex items-center gap-x-4">
+                    <div>
+                        <a href="{{ line_item.url }}" class="block aspect-square w-36 h-36 rounded-sm select-none bg-gray-200">
+                            <picture>
+                                <source srcset="{{ line_item.image | image_url: width: 160 }}" media="(min-width:1536px)" />
+                                <source srcset="{{ line_item.image | image_url: width: 160 }}" media="(min-width:1280px)" />
+                                <source srcset="{{ line_item.image | image_url: width: 160 }}" media="(min-width:1024px)" />
+                                <source srcset="{{ line_item.image | image_url: width: 160 }}" media="(min-width:768px)" />
+                                <source srcset="{{ line_item.image | image_url: width: 160 }}" media="(min-width:640px)" />
+                                <source srcset="{{ line_item.image | image_url: width: 160 }}" media="(min-width:0px)" />
+                                <img src="{{ line_item.image | image_url: width: 160 }}" height="132" width="132" loading="lazy" class="h-full w-auto object-contain rounded-sm" />
+                            </picture>
+                        </a>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex flex-col justify-center items-start">
+                            <div class="w-full flex flex-col sm:flex-row justify-between">
+                                <a href="{{ line_item.url }}" class="xl:text-lg font-medium">{{ line_item.product.title | truncate: 35, '' }}</a>
+                                <span class="font-semibold mt-1 sm:mt-0 xl:text-lg">{{ line_item.final_price | money_with_currency }}</span>
+                            </div>
+                            <div class="mt-1 sm:mt-0 text-sm">{{ line_item.variant.title }}</div>
+                            <div class="mt-1.5 flex justify-center items-center gap-2">
+                                <div role="button" data-cart-action="minus" data-cart-item-id="{{ forloop.index }}" data-cart-item-quantity="{{ line_item.quantity }}" class="py-1 px-2">{% render 'icon-minus', class: 'h-3 w-3 text-black' %}</div>
+                                <div class="select-none text-black font-medium">{{ line_item.quantity }}</div>
+                                <div role="button" data-cart-action="plus" data-cart-item-id="{{ forloop.index }}" data-cart-item-quantity="{{ line_item.quantity }}" class="py-1 px-2">{% render 'icon-plus', class: 'h-3 w-3 text-black' %}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div id="cart-drawer-footer" class="mt-auto shrink bg-white border-t border-gray-400">
+        <div class="pt-6 pb-7">
+            <div class="container mx-auto px-8 xl:px-24 text-black">
+                <div class="flex justify-between">
+                    <div class="font-semibold">Subtotal</div>
+                    <div class="font-bold">{{ cart.items_subtotal_price | money_with_currency }}</div>
+                </div>
+                <div class="mt-2 flex justify-between">
+                    <div class="font-semibold">Shipping</div>
+                    <div class="font-bold">FREE</div>
+                </div>
+                <a href="{{ routes.root_url | append: 'checkout' }}" class="block w-full mt-4 bg-black border border-black text-sm text-white font-medium uppercase py-3 sm:px-8 rounded-sm text-center select-none hover:bg-white hover:text-black">Checkout now</a>
+            </div>
+        </div>
+        <div class="bg-gray-100 border-t border-gray-400">
+            <div class="mx-auto pt-2 pb-3">
+                <div class="flex flex-col gap-y-3 lg:flex-row items-center justify-center gap-x-4">
+                    <div class="inline-flex justify-center gap-y-2 gap-x-0.5 flex-wrap">
+                        {% for type in shop.enabled_payment_types -%}
+                            {{ type | payment_type_svg_tag: class: 'h-6 sm:h-6 w-auto' }}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div id="cart" data-secure-action role="button" class="w-fit mt-4 mx-auto text-xs text-black font-semibold flex justify-center items-center gap-x-2 bg-green-400 py-2 px-3 rounded-sm select-none hover:bg-green-300 active:bg-green-500 border border-gray-500">{% render 'icon-secure', class: 'h-4 w-auto fill-black' %} <span>SSL ENCRYPTED | SECURE PAYMENTS</span></div>
+            </div>
+        </div>
+    </div>
+{% endif %}

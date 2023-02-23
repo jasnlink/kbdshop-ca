@@ -7,7 +7,10 @@
             <a href="{{ shop.url }}" class="text-2xl font-bold">KBDSHOP</a>
         </div>
         <div class="text-sm font-medium text-right">
-            <a href="{{ shop.url }}" title="CART">CART</a>
+            <a href="#" data-cart-open title="CART">
+                <span>CART</span>
+                <span data-cart-count="full"></span>
+            </a>
         </div>
     </nav>
 </header>
@@ -15,7 +18,7 @@
 {
     "name": "Header",
     "tag": "section",
-    "class": "sticky top-0 bg-white z-50",
+    "class": "fixed top-0 bg-white z-20 w-full",
     "limit": 1
 }
 {% endschema %}

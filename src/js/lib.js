@@ -1,15 +1,25 @@
 export function initAddCartAction() {
 
     const addCartActionElementList = document.querySelectorAll('[data-add-cart]');
+    const addCartShowcaseElementList = document.querySelectorAll('[data-add-cart-showcase]');
 
     addCartActionElementList.forEach((element) => {
+        element.addEventListener('click', handleAddCart);
+    })
+    addCartShowcaseElementList.forEach((element) => {
         element.addEventListener('click', handleAddCart);
     })
 
     function handleAddCart(event) {
 
+        event.preventDefault();
         const targetElement = event.currentTarget
-        const productId = parseInt(targetElement.dataset.addCart);
+        let productId
+        if(targetElement.dataset.addCart) {
+            productId = parseInt(targetElement.dataset.addCart);
+        } else if(targetElement.dataset.addCartShowcase) {
+            productId = parseInt(targetElement.dataset.addCartShowcase);
+        }
         enableBtnLoading(targetElement);
 
         let formData = {
@@ -73,7 +83,6 @@ export function updateCartCount() {
     })
     .then((data) => {
         handleCartCount(data.item_count)
-        handleCartTotal(data.items_subtotal_price)
     })
     .catch((error) => {
         console.error(error)
@@ -102,11 +111,11 @@ export function updateCartCount() {
     }
 
     function handleCartCount(count) {
-        let text = 'empty'
+        let text = ''
         if(count === 1) {
-            text = '1 item';
+            text = '(1)';
         } else if(count > 1) {
-            text = count+' items'
+            text = '('+count+')'
         }
         
         const cartCountElementList = document.querySelectorAll('[data-cart-count]')

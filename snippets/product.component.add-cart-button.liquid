@@ -1,0 +1,5 @@
+<button type="button" data-add-cart="{{ product.selected_or_first_available_variant.id }}" class="w-full bg-black border text-sm border-black text-white text-center uppercase font-medium rounded-sm py-3 px-8 select-none hover:bg-white hover:text-black disabled:opacity-75 disabled:bg-black disabled:text-white">
+    <span data-add-state="success" class="hidden">{% render 'icon-success', class: 'mx-auto h-5 w-5 text-white', fill: 'none' %}</span>
+    <span data-add-state="loading" class="hidden">{% render 'icon-loading', class: 'animate-spin mx-auto h-5 w-5 text-white' %}</span>
+    <span data-add-state="default">{{ button_text }}</span>
+</button>
