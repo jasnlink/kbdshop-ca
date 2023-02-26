@@ -56,6 +56,7 @@ function initVariantSelector() {
                 })
             })
         } else if(selectorType === 'dropdown') {
+            document.querySelectorAll('[data-selector-element-type="dropdown"] [data-selector-default]').forEach(element => handleSelection(element))
             selectorElement.addEventListener('change', event => {
                 event.preventDefault();
                 let selectedOption = event.target.options[event.target.options.selectedIndex]
@@ -67,12 +68,9 @@ function initVariantSelector() {
     function handleSelection(element) {
         let targetOptionIndex = parseInt(element.dataset.selectorAction)
 
-        console.log('targetOptionIndex', targetOptionIndex)
-
         if(selectionState[targetOptionIndex]['value']) {
             document.querySelectorAll('[data-selector-option-group-index="'+targetOptionIndex+'"] [data-selector-option-value="'+selectionState[targetOptionIndex]['value']+'"]')
             .forEach((optionElement) => {
-                console.log('optionElement', optionElement)
                 optionElement.classList.remove('bg-black')
                 optionElement.classList.remove('text-white')
                 optionElement.classList.add('bg-white')
