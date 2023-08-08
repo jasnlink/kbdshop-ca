@@ -38,7 +38,11 @@
         {%- endunless -%}
 
         <title>
-            {{ page_title }} &ndash; Mechanical keyboards
+            {% if request.page_type == 'index' %}
+                Shop Computer Accessories Canada
+            {% else %}
+                {{ page_title }} &ndash; Shop Computer Accessories Canada
+            {% endif %}
             {%- if current_tags %}
                 &ndash; tagged "{{ current_tags | join: ', ' }}"
             {%- endif -%}
