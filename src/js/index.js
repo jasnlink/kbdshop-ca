@@ -1,7 +1,7 @@
 import { initAddCartAction } from "./lib";
 
 window.addEventListener('DOMContentLoaded', (event) => {
-    initPagination();
+    //initPagination();
 });
 
 function initPagination() {

@@ -2,9 +2,65 @@ import { initAddCartAction } from "./lib";
 import { updateCartCount } from "./lib";
 
 window.addEventListener('DOMContentLoaded', (event) => {
+    initShopMenu();
     initSecurePopover();
     initCartDrawer();
 });
+
+function initShopMenu() {
+    const shopMenuOverlayElement = document.querySelector(`#main-shop-menu-overlay`)
+    const shopMenuElement = document.querySelector(`#main-shop-menu`)
+    const shopButtonElement = document.querySelector(`#main-shop-button`)
+    if (!shopMenuElement || !shopButtonElement || !shopMenuOverlayElement) {
+        return
+    }
+
+    let scrollPosition = 0
+    let isMenuOpen = false
+    
+    shopButtonElement.addEventListener(`click`, (event) => {
+        event.preventDefault()
+        handleMenu()
+    })
+    shopMenuOverlayElement.addEventListener(`click`, (event) => {
+        event.preventDefault()
+        handleMenu()
+    })
+    
+    function handleMenu() {
+        if (!isMenuOpen) {
+
+            scrollPosition = window.scrollY
+            document.body.style.overflow = `hidden`
+            document.body.style.position = `fixed`
+            document.body.style.top = `-${scrollPosition}px`
+            document.body.style.width = `100%`
+
+            shopMenuOverlayElement.classList.remove(`hidden`)
+            shopMenuElement.classList.remove(`hidden`)
+            setTimeout(() => {
+                shopMenuOverlayElement.classList.replace(`opacity-0`, `opacity-100`)
+                shopMenuElement.classList.replace(`opacity-0`, `opacity-100`)
+                isMenuOpen = true
+            }, 10)
+        } else {
+
+            document.body.style.removeProperty(`overflow`)
+            document.body.style.removeProperty(`position`)
+            document.body.style.removeProperty(`top`)
+            document.body.style.removeProperty(`width`)
+            window.scrollTo(0, scrollPosition)
+
+            shopMenuOverlayElement.classList.replace(`opacity-100`, `opacity-0`)
+            shopMenuElement.classList.replace(`opacity-100`, `opacity-0`)
+            shopMenuElement.addEventListener(`transitionend`, () => {
+                shopMenuOverlayElement.classList.add(`hidden`)
+                shopMenuElement.classList.add(`hidden`)
+                isMenuOpen = false
+            }, { once: true })
+        }
+    }
+}
 
 function initSecurePopover() {
 
@@ -45,6 +101,8 @@ function initSecurePopover() {
 }
 
 function initCartDrawer() {
+
+    let scrollPosition = 0
     let drawerOpen = false;
     const backdropOpacity = 0.4;
 
@@ -70,10 +128,15 @@ function initCartDrawer() {
         event.preventDefault();
 
         if(drawerOpen === false) {
+
+            scrollPosition = window.scrollY
+            document.body.style.overflow = `hidden`
+            document.body.style.position = `fixed`
+            document.body.style.top = `-${scrollPosition}px`
+            document.body.style.width = `100%`
+
             cartWrapperElement.classList.remove('hidden');
             cartDrawerElement.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-            document.documentElement.style.overflow = 'hidden';
             setTimeout(() => {
                 cartWrapperElement.style.opacity = backdropOpacity;
                 cartDrawerElement.style.transform = 'translateX(0%)';
@@ -81,13 +144,18 @@ function initCartDrawer() {
             drawerOpen = true
             handleCartFetch();
         } else if(drawerOpen === true) {
+
+            document.body.style.removeProperty(`overflow`)
+            document.body.style.removeProperty(`position`)
+            document.body.style.removeProperty(`top`)
+            document.body.style.removeProperty(`width`)
+            window.scrollTo(0, scrollPosition)
+
             cartWrapperElement.style.opacity = 0;
             cartDrawerElement.style.transform = 'translateX(100%)';
             cartWrapperElement.addEventListener('transitionend', () => {
                 cartWrapperElement.classList.add('hidden');
                 cartDrawerElement.classList.add('hidden');
-                document.body.style.overflow = '';
-                document.documentElement.style.overflow = '';
             }, {once:true})
             drawerOpen = false
         }

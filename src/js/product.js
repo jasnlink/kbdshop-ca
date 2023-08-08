@@ -89,22 +89,17 @@ function initVariantSelector() {
             optionElement.classList.add('bg-black')
             optionElement.classList.add('text-white')
         })
-        searchVariantList()
-    }
 
-    function searchVariantList() {
-        let search = ''
-        Object.keys(selectionState).forEach((key) => {
-            search += '[data-selector-variant-option-'+key+'="'+selectionState[key]['value']+'"]'
-        })
-        let foundElement = document.querySelector(search)
-        if(foundElement) {
+        const foundVariant = searchVariantList()
+
+        if(foundVariant) {
             document.querySelectorAll('[data-add-cart]').forEach(element => {
-                element.dataset.addCart = foundElement.dataset.selectorVariantId
+                element.dataset.addCart = foundVariant.dataset.selectorVariantId
                 element.disabled = false
             })
             document.querySelectorAll('[data-product-display-price]').forEach(element => {
-                element.dataset.productDisplayPrice = foundElement.dataset.selectorVariantPrice
+                element.dataset.productDisplayPrice = foundVariant.dataset.selectorVariantPrice
+                element.textContent = foundVariant.dataset.selectorVariantPrice
             })
         } else {
             document.querySelectorAll('[data-add-cart]').forEach(element => {
@@ -114,12 +109,23 @@ function initVariantSelector() {
         }
     }
 
+    function searchVariantList() {
+        let search = ''
+        Object.keys(selectionState).forEach((key) => {
+            search += '[data-selector-variant-option-'+key+'="'+selectionState[key]['value']+'"]'
+        })
+        return document.querySelector(search)
+    }
+
 }
 
 function initProductTabAction() {
 
-    let currentTab = 0
     let productTabElementList = document.querySelectorAll('[data-product-tab-action]')
+    if (!productTabElementList.length) {
+        return
+    }
+    let currentTab = 0
     productTabElementList.forEach(element => {
         element.addEventListener('click', event => {
             let currentTabElement = document.querySelector('[data-product-tab="'+currentTab+'"]')
@@ -139,8 +145,11 @@ function initProductTabAction() {
 
 function initCherryTabAction() {
 
-    let currentTab = 0
     let cherryTabElementList = document.querySelectorAll('[data-cherry-tab-action]')
+    if (!cherryTabElementList.length) {
+        return
+    }
+    let currentTab = 0
     cherryTabElementList.forEach(element => {
         element.addEventListener('click', event => {
             let currentTabElement = document.querySelector('[data-cherry-tab="'+currentTab+'"]')

@@ -1,7 +1,7 @@
-<header id="main-header">
+<header id="main-header" class="z-40 relative bg-white">
     <nav class="border-b border-gray-400 pt-4 pb-4 px-4 sm:px-8 grid grid-cols-3 items-center">
         <div class="text-sm font-medium">
-            <a href="{{ shop.url }}" title="SHOP">SHOP</a>
+            <a id="main-shop-button" href="#" title="SHOP">SHOP</a>
         </div>
         <div class="text-center">
             <a href="{{ shop.url }}" class="text-2xl font-bold">KBDSHOP</a>
@@ -14,11 +14,22 @@
         </div>
     </nav>
 </header>
+<div id="main-shop-menu-overlay" class="z-30 hidden transition-opacity ease-in-out duration-300 fixed top-0 left-0 right-0 bottom-0 bg-black/40 opacity-0"></div>
+<div id="main-shop-menu" class="z-40 relative overflow-auto max-h-[calc(100vh_-_4rem)] border-x border-b border-gray-400 px-4 sm:px-8 pt-4 pb-32 sm:py-4 hidden transition-opacity ease-in-out duration-300 opacity-0 bg-white">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-x-12 gap-y-4 sm:gap-y-2">
+        {% for link in linklists['shop-menu'].links %}
+            {% assign collection = link.object %}
+            <div>
+                <a class="no-underline hover:underline" href="{{ collection.url }}" title="{{ collection.title }}">{{ collection.title }}</a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
 {% schema %}
 {
     "name": "Header",
     "tag": "section",
-    "class": "fixed top-0 bg-white z-20 w-full",
+    "class": "fixed top-0 z-20 w-full",
     "limit": 1
 }
 {% endschema %}
