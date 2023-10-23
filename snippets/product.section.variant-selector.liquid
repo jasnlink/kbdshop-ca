@@ -1,6 +1,6 @@
 <div class="hidden">
     {% for variant in product.variants %}
-        {% if variant.available == true %}
+        {% if variant != blank %}
             {% capture data_variant_options %}
                 {% for option in variant.options %}
                     {% capture data_option %}{% if forloop.first %} {% endif %}{{ 'data-selector-variant-option-' | append: forloop.index | append: '="' | append: option | append: '"' }}{% unless forloop.last %} {% endunless %}{% endcapture %}

@@ -1,5 +1,24 @@
-<button type="button" data-add-cart="{{ product.selected_or_first_available_variant.id }}" class="w-full bg-black border text-sm border-black text-white text-center uppercase font-medium rounded-sm py-3 px-8 select-none hover:bg-white hover:text-black disabled:opacity-75 disabled:bg-black disabled:text-white">
-    <span data-add-state="success" class="hidden">{% render 'icon-success', class: 'mx-auto h-5 w-5 text-white', fill: 'none' %}</span>
-    <span data-add-state="loading" class="hidden">{% render 'icon-loading', class: 'animate-spin mx-auto h-5 w-5 text-white' %}</span>
-    <span data-add-state="default">{{ button_text }}</span>
-</button>
+{% if product.available %}
+    <button type="button" data-add-cart="{{ product.selected_or_first_available_variant.id }}" class="w-full bg-black border text-sm border-black text-white text-center uppercase font-medium rounded-sm py-3 px-8 select-none hover:bg-white hover:text-black disabled:opacity-75 disabled:bg-black disabled:text-white">
+        <span data-add-state="success" class="hidden">{% render 'icon-success', class: 'mx-auto h-5 w-5 text-white', fill: 'none' %}</span>
+        <span data-add-state="loading" class="hidden">{% render 'icon-loading', class: 'animate-spin mx-auto h-5 w-5 text-white' %}</span>
+        <span data-add-state="default">{{ button_text }}</span>
+    </button>
+{% else %}
+    {% form 'customer' %}
+        {% if form.posted_successfully? == true %}
+            <div>
+                <p class="text-md font-bold">Thank you, notify request sent!</p>
+            </div>
+        {% else %}
+            <div>
+                <p class="text-xs font-bold">Notify when back in stock</p>
+                <div class="w-full mt-2">
+                    <input type="hidden" id="customer_tag" name="contact[tags]" data-notify-me value="notify_me_{{ product.selected_or_first_available_variant.id }}">
+                    <input type="email" name="contact[email]" placeholder="Email" class="border border-gray-400 py-2 px-2 rounded-sm w-full text-black text-sm box-border" />
+                    <input role="button" type="submit" class="bg-black border border-black text-sm text-white font-medium uppercase py-2 rounded-sm text-center hover:bg-white w-full mt-2 hover:text-black" value="Notify me" />
+                </div>
+            </div>
+        {% endif %}
+    {% endform %}
+{% endif %}

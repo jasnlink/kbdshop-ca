@@ -93,6 +93,9 @@ function initVariantSelector() {
         const foundVariant = searchVariantList()
 
         if(foundVariant) {
+            document.querySelectorAll('[data-notify-me]').forEach(element => {
+                element.value = `notify_me_${foundVariant.dataset.selectorVariantId}`
+            })
             document.querySelectorAll('[data-add-cart]').forEach(element => {
                 element.dataset.addCart = foundVariant.dataset.selectorVariantId
                 element.disabled = false
