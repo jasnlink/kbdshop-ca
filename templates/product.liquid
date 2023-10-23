@@ -114,8 +114,13 @@
                     {% assign product_tab_count = product_tab_count | plus: 1 %}
                     <div data-product-tab="{{ product_tab_count }}"{% if product_tab_count != 0 %} class="hidden"{% endif %}>
                         <div class="text-lg font-semibold">Guaranteed Quality with Our Comprehensive Warranty</div>
-                        <div class="mt-4">We are committed to providing our customers with top-quality products and outstanding service. Our Filco Majestouch 3 mechanical keyboard comes with a one-year limited warranty, which covers any defects in materials and workmanship.</div>
-                        <div class="mt-4">If you encounter any issues with your keyboard within the warranty period, please contact our customer service team, and we will be happy to assist you with repair or replacement. Our team is dedicated to ensuring your satisfaction and making sure that your mechanical keyboard performs flawlessly for years to come.</div>
+                        {% if product.handle == 'filco-majestouch-3-tenkeyless' %}
+                            <div class="mt-4">We are committed to providing our customers with top-quality products and outstanding service. Our Filco Majestouch 3 mechanical keyboard comes with a one-year limited warranty, which covers any defects in materials and workmanship.</div>
+                            <div class="mt-4">If you encounter any issues with your keyboard within the warranty period, please contact our customer service team, and we will be happy to assist you with repair or replacement. Our team is dedicated to ensuring your satisfaction and making sure that your mechanical keyboard performs flawlessly for years to come.</div>
+                        {% else %}
+                            <div class="mt-4">We are committed to providing our customers with top-quality products and outstanding service. All cables from Phantom Cables come with Lifetime Warranty, which covers any defects in materials and workmanship.</div>
+                            <div class="mt-4">If you encounter any issues with your product within the warranty period, please contact our customer service team, and we will be happy to assist you with repair or replacement. Our team is dedicated to ensuring your satisfaction and making sure that your product performs flawlessly for years to come.</div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
